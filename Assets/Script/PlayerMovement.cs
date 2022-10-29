@@ -22,16 +22,20 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Movement();
+    }
+
+    private void Movement()
+    {
         if (move)
         {
             float dirX = Input.GetAxis("Horizontal");
 
             rb2D.velocity = new Vector2(-dirX * movementSpeed, rb2D.velocity.y);
 
-            if (Input.GetKey(KeyCode.Space))
-                rb2D.velocity = new Vector2(0, jumpHeight);
+            //if (Input.GetKey(KeyCode.Space))
+            //    rb2D.velocity = new Vector2(0, jumpHeight);
         }
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
