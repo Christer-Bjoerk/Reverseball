@@ -6,6 +6,7 @@ public class Gem : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip gemCollecting;
+    [SerializeField] private ParticleSystem gemParticle;
 
     private void Awake()
     {
@@ -15,6 +16,10 @@ public class Gem : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
+        {
             audioSource.PlayOneShot(gemCollecting);
+            gemParticle.Play();
+        }
+
     }
 }
