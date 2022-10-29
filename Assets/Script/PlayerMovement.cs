@@ -29,9 +29,7 @@ public class PlayerMovement : MonoBehaviour
             rb2D.velocity = new Vector2(-dirX * movementSpeed, rb2D.velocity.y);
 
             if (Input.GetKey(KeyCode.Space))
-            {
                 rb2D.velocity = new Vector2(0, jumpHeight);
-            }
         }
         
     }
@@ -54,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
 
+        // Display Credits
         SceneManager.LoadScene("CreditsScene");
 
         yield return null;
