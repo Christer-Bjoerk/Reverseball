@@ -653,6 +653,7 @@ GameObject:
   - component: {fileID: 793244390}
   - component: {fileID: 793244392}
   - component: {fileID: 793244391}
+  - component: {fileID: 793244393}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -718,6 +719,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793244389}
   m_CullTransparentMesh: 1
+--- !u!114 &793244393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793244389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MovementRange: 50
+  m_ControlPath: <Gamepad>/leftStick
 --- !u!1 &1050891828
 GameObject:
   m_ObjectHideFlags: 0
@@ -5771,9 +5786,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1652903992}
   - component: {fileID: 1652903991}
+  - component: {fileID: 1652903995}
   - component: {fileID: 1652903994}
   - component: {fileID: 1652903993}
-  - component: {fileID: 1652903995}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5907,6 +5922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53aefa168663dd0409e66858c54577ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actionPlayerMovement: {fileID: -6442465511765063767, guid: 89d97426810c3c64cb4007b313215111, type: 3}
   jumpHeight: 10
   movementSpeed: 7
   UIEvents:

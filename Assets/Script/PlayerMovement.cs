@@ -1,11 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private InputActionReference actionPlayerMovement;
+
     [SerializeField] private float jumpHeight;
     [SerializeField] private float movementSpeed;
 
@@ -14,13 +16,23 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb2D;
     private bool move = true;
 
+    private void OnEnable()
+    {
+        actionPlayerMovement.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        actionPlayerMovement.action.Disable();
+    }
+
     private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Movement();
     }
@@ -29,13 +41,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (move)
         {
-            float dirX = Input.GetAxis("Horizontal");
+            Vector2 dirX = actionPlayerMovement.action.ReadValue<Vector2>();
 
-            rb2D.velocity = new Vector2(-dirX * movementSpeed, rb2D.velocity.y);
+            rb2D.velocity = new Vector2(dirX.x * movementSpeed, rb2D.velocity.y);
 
             //if (Input.GetKey(KeyCode.Space))
             //    rb2D.velocity = new Vector2(0, jumpHeight);
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
