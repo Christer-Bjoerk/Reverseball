@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Gem : MonoBehaviour
@@ -19,7 +17,11 @@ public class Gem : MonoBehaviour
         {
             audioSource.PlayOneShot(gemCollecting);
             gemParticle.Play();
-        }
 
+            // Unlock the next level & save progress
+            GameManager.instance.UnlockNextLevel();
+
+            // Load the next level through SceneManager
+        }
     }
 }
