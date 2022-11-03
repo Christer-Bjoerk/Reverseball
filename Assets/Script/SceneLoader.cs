@@ -30,7 +30,7 @@ public class SceneLoader : MonoBehaviour
             }
             else if (sceneName != sceneList[i])
             {
-                Debug.Log(sceneName + "is missing from the buildIndex or doesn't exist");
+                Debug.Log(sceneName +" "+ "is missing from the buildIndex or doesn't exist");
             }
         }
     }
