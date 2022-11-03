@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -7,6 +9,9 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private float volumeThreshold = -80f;
     [SerializeField] private AudioMixer mixer;
+
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider effectsSlider;
 
     private void Awake()
     {
@@ -18,6 +23,16 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    private void Start()
+    {
+        float music = PlayerPrefs.GetFloat("Music");
+        float effects = PlayerPrefs.GetFloat("Effects");
+
+        // Decibel to linear 
+        musicSlider.value = MathF.Pow(10f, music / 20f);
+        effectsSlider.value = MathF.Pow(10f, effects / 20f);
     }
 
     /// <summary>
@@ -34,6 +49,7 @@ public class AudioManager : MonoBehaviour
             // Translate unit range to logarithmic value.
             float value = 20f * Mathf.Log10(sliderValue);
             mixer.SetFloat("Music", value);
+            PlayerPrefs.SetFloat("Music", value);
         }
     }
 
@@ -50,7 +66,9 @@ public class AudioManager : MonoBehaviour
         {
             // Translate unit range to logarithmic value.
             float value = 20f * Mathf.Log10(sliderValue);
+
             mixer.SetFloat("Effects", value);
+            PlayerPrefs.SetFloat("Effects", value);
         }
     }
 }
