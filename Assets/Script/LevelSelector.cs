@@ -9,7 +9,7 @@ public class LevelSelector : MonoBehaviour
 
     private void Start()
     {
-        // Only highlight levels the player has unlockek
+        // Only highlight levels the player has unlocked
         for (int i = 0; i < levelButtons.Count; i++)
         {
             if (i > GameManager.instance.reachedLevel)

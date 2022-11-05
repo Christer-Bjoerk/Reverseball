@@ -595,6 +595,10 @@ PrefabInstance:
       propertyPath: effectsSlider
       value: 
       objectReference: {fileID: 8849821246399434356}
+    - target: {fileID: 9168075505250879306, guid: 539817c8dffe76e4bae4b49588a49bc1, type: 3}
+      propertyPath: volumeThreshold
+      value: -80
+      objectReference: {fileID: 0}
     - target: {fileID: 9168075505250879307, guid: 539817c8dffe76e4bae4b49588a49bc1, type: 3}
       propertyPath: m_RootOrder
       value: 7

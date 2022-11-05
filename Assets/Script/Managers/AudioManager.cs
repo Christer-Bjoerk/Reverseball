@@ -7,7 +7,8 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    [SerializeField] private float volumeThreshold = -80f;
+    [SerializeField, Range(0, -80)] 
+    private float volumeThreshold = -80f;
     [SerializeField] private AudioMixer mixer;
 
     [SerializeField] private Slider musicSlider;
