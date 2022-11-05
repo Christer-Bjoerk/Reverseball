@@ -19,6 +19,7 @@ public class Gem : MonoBehaviour
             gemParticle.Play();
 
             // Unlock the next level & save progress
+            // Will get a null error if there's no level to unlock
             GameManager.instance.UnlockNextLevel();
 
             // Load the next level through SceneManager
