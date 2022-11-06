@@ -9,6 +9,10 @@ public class LevelSelector : MonoBehaviour
 
     private void Start()
     {
+        AvailableLevels();
+    }
+    public void AvailableLevels()
+    {
         // Only highlight levels the player has unlocked
         for (int i = 0; i < levelButtons.Count; i++)
         {

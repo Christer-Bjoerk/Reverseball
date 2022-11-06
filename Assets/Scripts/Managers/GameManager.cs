@@ -4,6 +4,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public GameEvent onDeleteSaveData;
+
+    [HideInInspector]
     public int reachedLevel { get; private set; } = 0;
 
     private void Awake()
@@ -33,8 +36,9 @@ public class GameManager : MonoBehaviour
 
     public void DeleteSaveData()
     {
-        PlayerPrefs.DeleteKey("reachedLevel");
-        // TODO
-        // Refresh Level Selection screen
+        PlayerPrefs.SetInt("reachedLevel", 0);
+        reachedLevel = PlayerPrefs.GetInt("reachedLevel", 0);
+
+        onDeleteSaveData.TriggerEvent();
     }
 }

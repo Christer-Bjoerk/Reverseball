@@ -27,6 +27,7 @@ public class SceneLoader : MonoBehaviour
             if (sceneName == sceneList[i])
             {
                 SceneManager.LoadScene(sceneName);
+                return;
             }
             else if (sceneName != sceneList[i])
             {
