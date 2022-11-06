@@ -60,6 +60,7 @@ public class AudioManager : MonoBehaviour
             audioObject.GetComponent<AudioSource>().loop = soundEffects[i].audioLoop;
             audioObject.GetComponent<AudioSource>().volume = soundEffects[i].audioVolume;
             audioObject.GetComponent<AudioSource>().clip = soundEffects[i].audioClip;
+            audioObject.GetComponent<AudioSource>().playOnAwake = false;
             soundEffects[i].audioSource = audioObject.GetComponent<AudioSource>();
         }
     }
