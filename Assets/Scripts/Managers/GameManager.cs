@@ -26,8 +26,12 @@ public class GameManager : MonoBehaviour
         // Get all unlocked levels at the start of each gaming session
         reachedLevel = PlayerPrefs.GetInt("reachedLevel", reachedLevel);
 
-        Screen.autorotateToPortraitUpsideDown = true;
+        SetScreenOrientation();
+    }
 
+    private void SetScreenOrientation()
+    {
+        Screen.autorotateToPortraitUpsideDown = true;
         Screen.orientation = ScreenOrientation.PortraitUpsideDown;
     }
 
