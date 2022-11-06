@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpHeight;
     [SerializeField] private float movementSpeed;
 
-    [SerializeField] private UnityEvent UIEvents;
+    [SerializeField] private GameEvent GemCollected;
 
     private Rigidbody2D rb2D;
     private bool move = true;
@@ -53,24 +53,23 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Flag"))
+        if (collision.CompareTag("Gem"))
         {
             move = false;
             rb2D.velocity = Vector2.zero;
 
-            StartCoroutine(PlayEndCredits());
+            StartCoroutine(LevelCompletion());
         }
     }
 
-    private IEnumerator PlayEndCredits()
+    private IEnumerator LevelCompletion()
     {
-        // Display Text
-        UIEvents?.Invoke();
+        GemCollected.TriggerEvent();
 
         yield return new WaitForSeconds(1.5f);
 
         // Display Credits
-        SceneManager.LoadScene("CreditsScene");
+        SceneManager.LoadScene("LevelSelectionScene");
 
         yield return null;
     }

@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeThreshold: -80
-  audioParent: {fileID: 0}
+  audioParent: {fileID: 9168075505250879301}
   mixer: {fileID: 24100000, guid: afda8b6c49b87af499121c13439f3de3, type: 2}
   music:
   - name: 
