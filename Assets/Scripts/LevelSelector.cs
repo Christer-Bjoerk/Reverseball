@@ -17,10 +17,8 @@ public class LevelSelector : MonoBehaviour
         for (int i = 0; i < levelButtons.Count; i++)
         {
             if (i > GameManager.instance.reachedLevel)
-            {
                 // Else the levels are non interactable
                 levelButtons[i].interactable = false;
-            }
         }
     }
 }

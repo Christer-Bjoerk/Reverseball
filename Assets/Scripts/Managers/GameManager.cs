@@ -4,10 +4,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public GameEvent onDeleteSaveData;
+    [SerializeField] private GameEvent onDeleteSaveData;
+    [SerializeField] private GameEvent LoadScene;
 
     [HideInInspector]
     public int reachedLevel { get; private set; } = 0;
+
+    [SerializeField] private int totalLevels = 3;
 
     private void Awake()
     {
@@ -30,15 +33,24 @@ public class GameManager : MonoBehaviour
 
     public void UnlockNextLevel()
     {
-        reachedLevel++;
-        PlayerPrefs.SetInt("reachedLevel", reachedLevel);
+        // Unlock the next level
+        if (reachedLevel < totalLevels)
+        {
+            reachedLevel++;
+            // Save progress
+            PlayerPrefs.SetInt("reachedLevel", reachedLevel);
+        }
+        else if (reachedLevel >= totalLevels)
+        {
+            // Play credits if completed the last level
+            LoadScene.TriggerEvent();
+        }
     }
 
     public void DeleteSaveData()
     {
         PlayerPrefs.SetInt("reachedLevel", 0);
         reachedLevel = PlayerPrefs.GetInt("reachedLevel", 0);
-
         onDeleteSaveData.TriggerEvent();
     }
 }

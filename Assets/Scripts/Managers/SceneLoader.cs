@@ -10,6 +10,11 @@ public class SceneLoader : MonoBehaviour
 
     private void Awake()
     {
+        GetAllScenes();
+    }
+
+    private void GetAllScenes()
+    {
         sceneCount = SceneManager.sceneCountInBuildSettings;
 
         for (int i = 0; i < sceneCount; i++)
@@ -25,14 +30,7 @@ public class SceneLoader : MonoBehaviour
         for (int i = 0; i < sceneList.Count; i++)
         {
             if (sceneName == sceneList[i])
-            {
                 SceneManager.LoadScene(sceneName);
-                return;
-            }
-            else if (sceneName != sceneList[i])
-            {
-                Debug.Log(sceneName +" "+ "is missing from the buildIndex or doesn't exist");
-            }
         }
     }
 }
