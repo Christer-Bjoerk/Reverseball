@@ -31,8 +31,8 @@ public class GameManager : MonoBehaviour
 
     private void SetScreenOrientation()
     {
-        Screen.autorotateToPortraitUpsideDown = true;
-        Screen.orientation = ScreenOrientation.PortraitUpsideDown;
+        Screen.autorotateToLandscapeLeft = true;
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
     }
 
     public void UnlockNextLevel()
