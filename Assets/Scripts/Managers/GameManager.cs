@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour
     public void DeleteSaveData()
     {
         PlayerPrefs.SetInt("reachedLevel", 0);
+        PlayerPrefs.SetInt("LvL 1", 0);
+
         reachedLevel = PlayerPrefs.GetInt("reachedLevel", 0);
         onDeleteSaveData.TriggerEvent();
     }
