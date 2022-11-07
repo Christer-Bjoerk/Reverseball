@@ -57,20 +57,6 @@ public class PlayerMovement : MonoBehaviour
         {
             move = false;
             rb2D.velocity = Vector2.zero;
-
-            StartCoroutine(LevelCompletion());
         }
-    }
-
-    private IEnumerator LevelCompletion()
-    {
-        GemCollected.TriggerEvent();
-
-        yield return new WaitForSeconds(1.5f);
-
-        // Display Credits
-        SceneManager.LoadScene("LevelSelectionScene");
-
-        yield return null;
     }
 }

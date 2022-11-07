@@ -1663,7 +1663,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDeleteSaveData: {fileID: 11400000, guid: cff931b280752bd48a0ad8531f5eeb18, type: 2}
-  LoadScene: {fileID: 11400000, guid: 2b701237045e26d46936427fc20ec563, type: 2}
+  loadScene: {fileID: 0}
+  gemCollected: {fileID: 0}
   totalLevels: 1
 --- !u!4 &1003185969
 Transform:
