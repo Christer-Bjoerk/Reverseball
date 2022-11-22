@@ -5,8 +5,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [SerializeField] private GameEvent onDeleteSaveData;
-    [SerializeField] private GameEvent loadScene;
-    [SerializeField] private GameEvent gemCollected;
 
     [HideInInspector]
     public int reachedLevel { get; private set; } = 0;
@@ -44,11 +42,6 @@ public class GameManager : MonoBehaviour
             reachedLevel++;
             // Save progress
             PlayerPrefs.SetInt("reachedLevel", reachedLevel);
-        }
-        else if (reachedLevel >= totalLevels)
-        {
-            // Play credits if completed the last level
-            loadScene.TriggerEvent();
         }
     }
 
