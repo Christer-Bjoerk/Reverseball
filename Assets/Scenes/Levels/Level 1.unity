@@ -1009,7 +1009,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: LevelSelectionScene
+          m_StringArgument: CreditsScene
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!4 &1320985191
@@ -6272,9 +6272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDeleteSaveData: {fileID: 11400000, guid: cff931b280752bd48a0ad8531f5eeb18, type: 2}
-  loadScene: {fileID: 11400000, guid: 2b701237045e26d46936427fc20ec563, type: 2}
-  gemCollected: {fileID: 11400000, guid: c18d2772aba8b5642ac7d17ee69f2c7f, type: 2}
-  totalLevels: 3
+  totalLevels: 1
 --- !u!1 &1840466911
 GameObject:
   m_ObjectHideFlags: 0
@@ -6832,7 +6830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfxGem: GemCollected
-  loadScene: {fileID: 11400000, guid: c18d2772aba8b5642ac7d17ee69f2c7f, type: 2}
+  levelCompletion: {fileID: 11400000, guid: c18d2772aba8b5642ac7d17ee69f2c7f, type: 2}
   delay: 1
   completed: 0
 --- !u!95 &7851489926807826154

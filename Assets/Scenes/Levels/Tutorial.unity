@@ -774,9 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDeleteSaveData: {fileID: 11400000, guid: cff931b280752bd48a0ad8531f5eeb18, type: 2}
-  loadScene: {fileID: 11400000, guid: 2b701237045e26d46936427fc20ec563, type: 2}
-  gemCollected: {fileID: 11400000, guid: c18d2772aba8b5642ac7d17ee69f2c7f, type: 2}
-  totalLevels: 3
+  totalLevels: 2
 --- !u!1001 &1952425287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -855,6 +853,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5472699455173725306, guid: cee6697b01531cd43b3c8db6ec2f2787, type: 3}
+      propertyPath: levelCompletion
+      value: 
+      objectReference: {fileID: 11400000, guid: c18d2772aba8b5642ac7d17ee69f2c7f, type: 2}
     - target: {fileID: 5472699455276670057, guid: cee6697b01531cd43b3c8db6ec2f2787, type: 3}
       propertyPath: m_RootOrder
       value: 5
