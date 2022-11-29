@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -33,7 +31,7 @@ public class Particle
         set { name = value; }
     }
 
-    public ParticleSystem particleSystem 
+    public ParticleSystem particleSystem
     {
         get { return particle; }
         set { particle = value; }

@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class UI : MonoBehaviour
 {
@@ -12,7 +10,7 @@ public class UI : MonoBehaviour
         winText.gameObject.SetActive(false);
     }
 
-    public void DisplayWinText()
+    private void DisplayWinText()
     {
         winText.gameObject.SetActive(true);
         winText.text = "You won";
